@@ -2,12 +2,42 @@
 
 namespace hello
 {
-      class MainClass
+      class Student
       {
-            public static void Main(string[] args)
+            //姓名
+            string name;
+            public string Name
             {
-                  Console.WriteLine("Hello World!");
+                  get { return this.name}
+                  set
+                  {
+                        if ( value == "")
+                        {
+                              throw new ArgumentException("姓名字段不能为空");
+                              this.name = value;
+                        }
+                  }
             }
+
+            //年龄
+            int age;
+            public int Age
+            {
+                  get { return this.age}
+                  set 
+                  {
+                       if (value < 1 || value > 100)
+                        {
+                              throw new ArgumentException("年龄超出范围");
+                              this.age = value;
+
+                        }
+                  }
+            }
+
+
+
+
       }
 }
 
